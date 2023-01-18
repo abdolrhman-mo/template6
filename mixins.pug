@@ -1,0 +1,28 @@
+mixin box(className="", imgSrc="", heading="Lorem ipsum dolor sit amet", paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.") 
+    div(class=className + " box")
+        img(src=imgSrc, alt="", srcset="")
+        h3=heading
+        p.text=paragraph
+
+mixin team-member(imgSrc, name, job, paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.") 
+    .member.box
+        img(src=imgSrc, alt="", srcset="")
+        h3=name
+        h4=job
+        p.text=paragraph
+        .social
+            a(href="facebook.com", target="_blank")
+                i.fa-brands.fa-facebook
+            a(href="twitter.com", target="_blank")
+                i.fa-brands.fa-twitter
+            a(href="instagram.com", target="_blank")
+                i.fa-brands.fa-instagram
+
+mixin service(fa, heading="Lorem ipsum dolor sit amet", paragraph="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.") 
+    .service.box
+        .left
+            i(class=fa)
+        .right
+            h3=heading 
+            p.text=paragraph
+        .clearfix

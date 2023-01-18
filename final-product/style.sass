@@ -1,0 +1,383 @@
+@import 'base'
+    
+@font-face 
+    font-family: Roboto
+    src: url(assets/fonts/Roboto-Regular.ttf)
+
+// @font-face 
+//     font-family: Roboto
+//     font-weight: bold
+//     src: url()
+
+// @font-face 
+//     font-family: Roboto
+//     font-weight: 900
+//     src: url()
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+h2 
+    text-transform: uppercase
+    font-size: 35px
+    letter-spacing: 3px
+
+.text
+    opacity: 0.6
+
+.boxes.two
+    > div
+        @include boxes(2)
+    .clearfix
+        float: none
+        padding: 0
+        margin: 0
+
+.boxes.three
+    > div
+        @include boxes(3)
+    .clearfix
+        @include clearfix-reset-styles
+
+.boxes.four
+    > div
+        @include boxes(4)
+    .clearfix
+        @include clearfix-reset-styles
+
+.boxes
+    > div
+        &:nth-last-of-type(2)
+            margin-right: 0
+
+.clearfix 
+    clear: both
+
+.boxes div.box 
+    padding: 50px 10px
+    img
+        padding-bottom: 30px
+    h3
+        padding-bottom: 30px
+    p
+        line-height: 23px
+
+body
+    font-family: Roboto
+
+$container-padding: 80px
+.container
+    padding: $container-padding
+
+nav
+    text-align: center
+    .nav-btn
+        padding: 15px
+        cursor: pointer
+    ul.nav-menu
+        height: 0
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        transition: 0.3s ease
+        li
+            a
+                color: #000
+                font-size: 30px
+                text-transform: capitalize
+                text-decoration: none
+                transition: 0.3s ease
+                &:hover
+                    color: $main-color
+
+.main
+    .container.boxes.two
+        background: $main-color
+        color: #fff
+        padding-bottom: 0
+    div.left
+        // === center contents verticaly ===
+        padding-top: 0
+        padding-bottom: 0
+        min-height: 75vh
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: flex-start
+        h1
+            width: 70%   
+            font-size: 65px
+            line-height: 60px
+            letter-spacing: 3px
+            text-transform: uppercase
+        button
+            color: $main-color
+            padding: 17px 40px
+            border: none
+            border-radius: 50px
+            text-transform: uppercase
+            letter-spacing: 4px
+            font-weight: bold
+            cursor: pointer
+            transition: 0.3s
+            &:hover
+                opacity: 0.9
+    div.right
+        overflow: hidden
+    img
+        width: 130%
+    @media (min-width: $small-screen-width)
+        div.right
+            padding: 0
+            position: relative
+            top: -$container-padding       // container's padding
+            right: -$container-padding     // container's padding
+
+@media (max-width: $small-screen-width)
+    .main
+        .container.two.boxes
+            padding: 80px
+            .left
+                display: flex
+                align-items: center
+                text-align: center
+                h1
+                    font-size: 40px
+            .right
+                img
+                    display: none
+
+.servecis
+    background: $gray
+    div.service
+        background: #fff
+        border-radius: 40px
+        box-shadow: 5px 10px 18px #d7d7d7
+        .left
+            float: left
+            width: 25%
+            margin-right: 15px
+            display: flex
+            justify-content: center
+            svg
+                font-size: 60px
+                color: $main-color
+        .right
+            float: left
+            width: calc( (100% * 3 / 4) - 15px )
+            h3
+                color: $main-color
+                padding-bottom: 30px
+                text-transform: capitalize
+            p
+                line-height: 23px
+        @media (min-width: $small-screen-width)
+            margin-top: -110px
+
+@media (max-width: $small-screen-width)
+    .servecis
+        div.service
+            margin-bottom: 40px
+            .left
+                float: none
+                width: 100%
+                padding-bottom: 40px
+                margin: 0
+                text-align: center
+            .right
+                float: none
+                width: 100%
+                text-align: center
+
+.meet-the-team
+    .layout
+        color: #fff
+        background: $main-color
+        $layout-height: 220px
+        height: $layout-height
+        h2
+            text-transform: capitalize
+            text-align: center
+            padding-top: $layout-height / 4
+    .team-members
+        background: #FFF
+        margin-top: -150px
+        text-align: center
+        .member
+            img
+                width: 200px
+            h4
+                color: $main-color
+                padding-bottom: 40px
+            .social
+                padding-top: 20px
+                a
+                    color: #000
+                    transition: 0.3s ease
+                    &:hover
+                        color: $main-color
+                    svg
+                        padding: 5px
+                        font-size: 20px    
+
+.strategies
+    background: $gray
+    h2
+        text-align: center
+        padding-bottom: 75px
+    .strategy
+        background: #FFF
+        text-align: center
+
+@media (max-width: $small-screen-width)
+    .strategies
+        div.strategy
+            margin-bottom: 40px
+
+.experience
+    background: $main-color
+    .ex-box
+        text-align: center
+        background: #fff
+        img
+            display: none
+        h3
+            text-transform: uppercase
+        p
+            color: $main-color
+            font-size: 50px
+            font-weight: 900
+        
+@media (max-width: $small-screen-width)
+    .experience
+        div.ex-box
+            margin-bottom: 40px
+
+.testimonial
+    font-size: 20px
+    .container
+        padding-top: 0
+        padding-bottom: 0
+        .left,
+        .right
+            display: flex
+            height: 100%
+            align-items: center
+            padding-top: 0
+            padding-bottom: 0
+            .left-quote
+                width: 100%
+                text-align: start
+                margin-left: -40px
+            .right-quote
+                width: 100%
+                text-align: end
+
+@media (max-width: $small-screen-width)
+    .testimonial
+        .container
+            padding: 80px
+            .left,
+            .right
+                display: block
+                height: fit-content
+            img
+                display: none
+
+.about-us
+    background: $gray
+    text-align: center
+    ul
+        padding-top: 40px
+        display: flex
+        justify-content: space-around
+        width: 100%
+        li
+            list-style: none
+            padding: 15px
+            text-transform: capitalize
+            cursor: pointer
+            width: calc( 100% / 3 )
+        li.show
+            color: #fff
+            background: $main-color
+    article
+        background: #fff
+        padding: 25px
+        > div
+            display: none
+        div.show
+            display: block
+
+.contact
+    background: $main-color
+    color: #fff
+    .email-entry
+        color: #000
+        background: #fff
+        border-radius: 20px
+        padding: 50px 30px
+        margin-top: 35px
+        display: flex
+        justify-content: space-around
+        .left
+            float: left
+            width: 30%
+            padding-right: 10%
+        .right
+            float: left
+            width: 60%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            form
+                background: $gray
+                border-radius: 50px 
+                padding: 20px
+                display: flex
+                justify-content: space-between
+                input
+                    border: none
+                    border-radius: 50px
+                    padding: 10px
+                    width: 35%
+                input[type="submit"]
+                    color: #fff
+                    background: $main-color
+                    width: 20%
+                    cursor: pointer
+
+@media (max-width: $small-screen-width)
+    .contact
+        .container
+            .email-entry
+                display: block
+                .left
+                    float: none
+                    width: 100%
+                    text-align: center
+                    padding-bottom: 40px
+                    h2
+                        padding-bottom: 20px
+                .right
+                    float: none
+                    width: 100%
+                    form
+                        display: block
+                        input
+                            display: block
+                            width: 100%
+                            margin-bottom: 20px
+
+footer
+    color: #fff
+    background: #444
+    text-transform: capitalize
+    .container
+        text-align: center
+        span
+            text-transform: none

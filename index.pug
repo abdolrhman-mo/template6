@@ -1,0 +1,134 @@
+include mixins
+
+html 
+    head 
+        link(rel="stylesheet", href="all.min.css")
+        link(rel="stylesheet", href="style.css")
+    body 
+        nav 
+            .nav-btn
+                i(class="fa-solid fa-navicon", style="font-size: 25px;")
+            ul.nav-menu
+                li 
+                    a(href="#services") services
+                li 
+                    a(href="#meet-the-team") meet the team 
+                li 
+                    a(href="#strategies") strategies 
+                li 
+                    a(href="#experience") experience 
+                li 
+                    a(href="#testimonials") what they said about us 
+                li 
+                    a(href="#about-us") about us 
+                li 
+                    a(href="#contact") contact us
+        .main 
+            .container.two.boxes
+                .left
+                    h1 we help and solve your technical problems
+                    p.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias culpa assumenda ut perferendis fugit dolore a sit tempore adipisci nobis, error,  
+                    a(href="#services")
+                        button read more
+                .right
+                    img(src=" ../main-image.png", alt="Not recognized") 
+                .clearfix
+        .servecis#services
+            .container.three.boxes
+                +service("fa-solid fa-file-code", "create a front-end website")
+                +service("fa-brands fa-wordpress", "create a wordpress website")
+                +service("fa-solid fa-eraser", "solve any problem you face")
+                .clearfix
+        .meet-the-team#meet-the-team
+            .layout
+                h2 meet the team
+            .container
+                .team-members.three.boxes 
+                    +team-member("../team member 1.png", "Abdo Mohammed", "CEO")
+                    +team-member("../team member 2.png", "Sief Eldeen", "Front-end")
+                    +team-member("../team member 3.png", "Yasseen Ali", "Back-end")
+                    .clearfix
+        .strategies#strategies
+            .container.three.boxes
+                h2 the strategy of our team works with you
+                +box("strategy")
+                +box("strategy")
+                +box("strategy")
+                .clearfix
+        .experience#experience
+            .container.four.boxes
+                +box("ex-box", "", "awards won", "17") 
+                +box("ex-box", "", "xp years", "12+") 
+                +box("ex-box", "", "clients", "108") 
+                +box("ex-box", "", "projects", "150") 
+                .clearfix
+        .testimonial.first#testimonials
+            .container.two.boxes
+                .left
+                    div.left-quote
+                        i.fa-solid.fa-quote-left
+                    div
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    div.right-quote
+                        i.fa-solid.fa-quote-right
+                .right
+                    img(src="../team member 1.png", style="width: 400px", alt="")
+                .clearfix
+        .testimonial
+            .container.two.boxes
+                .left 
+                    img(src="../team member 2.png", style="width: 400px", alt="")
+                .right
+                    div.left-quote 
+                        i.fa-solid.fa-quote-left
+                    div
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .right-quote 
+                        i.fa-solid.fa-quote-right
+                .clearfix
+        .about-us#about-us
+            .container 
+                h2 about us
+                ul 
+                    li.show overview 
+                    li founder 
+                    li mission
+                article 
+                    .overview-article.show
+                        | Overview Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    .founder-article 
+                        | Founder Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    .mission-article
+                        | Mission Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        .contact#contact
+            .container 
+                h2 what can we offer for your buisness?
+                .email-entry
+                    .left  
+                        h2 get a free advice
+                        p.text Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    .right 
+                        form
+                            input(type="text" placeholder="Enter your Name")
+                            input(type="text" placeholder="Enter a Valid Email Adress")
+                            input(type="submit", value="Submit")
+                    .clearfix
+        footer 
+            .container 
+                | all rights reserved to abdo 
+                span @abdelrhhmanlearn@gmail.com
+        script(src="../app.js")
+        script(src="all.min.js")
